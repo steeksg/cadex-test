@@ -2,11 +2,9 @@ import { Component } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import FormSendingToServer from "../formSendingToServer/formSendingToServer";
-import { SceneUtils } from "three//examples/jsm/utils/SceneUtils.js";
+import { SceneUtils } from "three/examples/jsm/utils/SceneUtils.js";
 
 class ThreePanel extends Component {
-  // routers = useRouts();
-
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +39,7 @@ class ThreePanel extends Component {
 
     this.scene = new THREE.Scene();
     this.material = new THREE.MeshNormalMaterial();
-    this.renderer.setSize(500, 500);
+    this.renderer.setSize(this.sceneContainer.clientWidth, this.sceneContainer.clientWidth);
   }
 
   animate() {
@@ -79,9 +77,9 @@ class ThreePanel extends Component {
 
   render() {
     return (
-      <div className="threePanel">
-        <div ref={(ref) => (this.sceneContainer = ref)} />
+      <div className="threePanel" >
         <FormSendingToServer handleRecivedData={this.handleRecivedData} />
+        <div ref={(ref) => (this.sceneContainer = ref)} />
       </div>
     );
   }

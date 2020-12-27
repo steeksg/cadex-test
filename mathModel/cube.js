@@ -14,7 +14,7 @@ const indicesOfFaces = [
 
 function setCoordinateVerticesOfCube(paramsLWH) {
     return verticesOfCubeMap.map((item, index) => {
-        switch (index % 3) {
+        switch ((index+1) % 3) {
           case 0: {
             item *= (paramsLWH.height/2);
             break;

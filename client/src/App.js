@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App">
       <NavbarApp />
-      <conteiner>
+      <div className="container">
         <Router>{routes}</Router>
-      </conteiner>
+      </div>
     </div>
   );
 }

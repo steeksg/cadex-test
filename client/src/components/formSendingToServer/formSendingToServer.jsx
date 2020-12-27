@@ -17,11 +17,15 @@ class FormSendingToServer extends Component {
   };
 
   handleSubmit = (event) => {
-    fetch(
-      `http://localhost:9000/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
-    )
-      .then((response) => response.json())
-      .then((response) => this.handleRecivedData(response));
+    try {
+      fetch(
+        `http://localhost:9000/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
+      )
+        .then((response) => response.json())
+        .then((response) => this.handleRecivedData(response));
+    } catch (error) {
+      console.log("Error response server!");
+    }
 
     if (!!event) event.preventDefault();
   };
@@ -36,7 +40,7 @@ class FormSendingToServer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="formContainer">
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label>Length:</Form.Label>

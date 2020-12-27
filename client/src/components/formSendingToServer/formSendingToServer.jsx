@@ -18,10 +18,15 @@ class FormSendingToServer extends Component {
 
   handleSubmit = (event) => {
     const port = process.env.PORT || 9000;
-    console.log(port);
+
+    const hostLink =
+      process.env.NODE_ENV === "production"
+        ? "https://cadex-test.herokuapp.com"
+        : `http://localhost:${port}`;
+
     try {
       fetch(
-        `https://cadex-test.herokuapp.com/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
+        `${hostLink}/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
       )
         .then((response) => response.json())
         .then((response) => this.handleRecivedData(response));

@@ -30,9 +30,9 @@ export const InfoPage = () => {
             5. The client should display computed triangulation in a 3D view
             using WebGL (e.g. with the help of three.js library).
           </p>
-          <p>Autor: steeksg</p>
+          <p>Author: steeksg</p>
           <p>Email: andrei792@mail.ru</p>
-          <p>Github project: <a href="https://github.com/">cadex-test</a></p>
+          <p>Github project: <a href="https://github.com/steeksg/cadex-test">cadex-test</a></p>
         </Card.Text>
       </Card.Body>
     </Card>

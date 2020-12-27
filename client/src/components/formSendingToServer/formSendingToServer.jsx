@@ -21,7 +21,7 @@ class FormSendingToServer extends Component {
     console.log(port);
     try {
       fetch(
-        `http://localhost:${port}/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
+        `https://cadex-test.herokuapp.com/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
       )
         .then((response) => response.json())
         .then((response) => this.handleRecivedData(response));

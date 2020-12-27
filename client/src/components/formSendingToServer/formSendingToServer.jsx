@@ -17,9 +17,11 @@ class FormSendingToServer extends Component {
   };
 
   handleSubmit = (event) => {
+    const port = process.env.PORT || 9000;
+    console.log(port);
     try {
       fetch(
-        `http://localhost:9000/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
+        `http://localhost:${port}/triangle/cube?length=${this.state.length}&width=${this.state.width}&height=${this.state.height}`
       )
         .then((response) => response.json())
         .then((response) => this.handleRecivedData(response));

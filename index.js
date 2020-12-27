@@ -7,7 +7,7 @@ app.use(cors());
 app.use("/triangle", require("./routes/triangle"));
 const port = 9000;
 
-if (process.env.NODE_ENV === "prodaction") {
+if (process.env.NODE_ENV === "production") {
   app.use("/", express.static(path.join(__dirname, "client", "build")));
 
   app.get("*", (req, res) => {

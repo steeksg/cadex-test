@@ -10,7 +10,6 @@ export const InfoPage = () => {
           Create a simple client-server web application (including front-end and
           back-end) which can display a simple 3D box in a 3D view.
         </Card.Title>
-        <Card.Text>
           <Card.Text>The application should provide the following functionality:</Card.Text>
           <Card.Text>1. This should be a single page application (SPA).</Card.Text>
           <Card.Text>
@@ -36,7 +35,6 @@ export const InfoPage = () => {
             Github project:
             <a href="https://github.com/steeksg/cadex-test">cadex-test</a>
           </Card.Text>
-        </Card.Text>
       </Card.Body>
     </Card>
   );

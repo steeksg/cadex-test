@@ -11,6 +11,7 @@ class ThreePanel extends Component {
       verticesOfCube: [],
       indicesOfFaces: [],
     };
+    this.onWindowResize = this.onWindowResize.bind(this);
   }
 
   handleReceivedData = (data) => {
@@ -29,7 +30,7 @@ class ThreePanel extends Component {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.camera = new THREE.PerspectiveCamera(
       70,
-      window.innerWidth / window.innerHeight,
+      this.sceneContainer.clientWidth / this.sceneContainer.clientWidth,
       1,
       1000
     );
@@ -71,18 +72,35 @@ class ThreePanel extends Component {
     this.scene.add(cube);
   }
 
+  onWindowResize() {
+    console.log("resize");
+    this.camera.aspect = this.sceneContainer.clientWidth / this.sceneContainer.clientWidth;
+
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(
+      this.sceneContainer.clientWidth,
+      this.sceneContainer.clientWidth
+    );
+  }
+
   componentDidMount() {
     this.setupScene();
     this.sceneContainer.appendChild(this.renderer.domElement);
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.animate();
+    window.addEventListener("resize", this.onWindowResize, false);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.onWindowResize, false);
   }
 
   render() {
     return (
       <div className="threePanel mt-3">
-          <FormSendingToServer handleReceivedData={this.handleReceivedData} />
-          <div ref={(ref) => (this.sceneContainer = ref)} />
+        <FormSendingToServer handleReceivedData={this.handleReceivedData} />
+        <div ref={(ref) => (this.sceneContainer = ref)} />
       </div>
     );
   }

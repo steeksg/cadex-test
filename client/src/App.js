@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <NavbarApp />
-      <Container>
+      <Container className="d-flex justify-content-center">
         <Router>{routes}</Router>
       </Container>
     </div>

@@ -13,7 +13,7 @@ class ThreePanel extends Component {
     };
   }
 
-  handleRecivedData = (data) => {
+  handleReceivedData = (data) => {
     this.fillGeometryData(data);
     this.scene.remove(this.scene.getObjectByName("cube"));
     this.setParamsCube(this.state);
@@ -81,7 +81,7 @@ class ThreePanel extends Component {
   render() {
     return (
       <div className="threePanel mt-3">
-          <FormSendingToServer handleRecivedData={this.handleRecivedData} />
+          <FormSendingToServer handleReceivedData={this.handleReceivedData} />
           <div ref={(ref) => (this.sceneContainer = ref)} />
       </div>
     );

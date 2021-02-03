@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 export const InfoPage = () => {
   return (
-    <Card>
+    <Card className="mt-3">
       <Card.Header>Test task for CADEX</Card.Header>
       <Card.Body>
         <Card.Title>

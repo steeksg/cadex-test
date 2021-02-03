@@ -3,6 +3,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import NavbarApp from "./components/navbar/navbar";
 
+import { Container } from "react-bootstrap";
+
 import { useRouts } from "./routes";
 
 function App() {
@@ -11,9 +13,9 @@ function App() {
   return (
     <div className="App">
       <NavbarApp />
-      <div className="container">
+      <Container>
         <Router>{routes}</Router>
-      </div>
+      </Container>
     </div>
   );
 }

@@ -39,7 +39,10 @@ class ThreePanel extends Component {
 
     this.scene = new THREE.Scene();
     this.material = new THREE.MeshNormalMaterial();
-    this.renderer.setSize(this.sceneContainer.clientWidth, this.sceneContainer.clientWidth);
+    this.renderer.setSize(
+      this.sceneContainer.clientWidth,
+      this.sceneContainer.clientWidth
+    );
   }
 
   animate() {
@@ -77,9 +80,9 @@ class ThreePanel extends Component {
 
   render() {
     return (
-      <div className="threePanel" >
-        <FormSendingToServer handleRecivedData={this.handleRecivedData} />
-        <div ref={(ref) => (this.sceneContainer = ref)} />
+      <div className="threePanel mt-3">
+          <FormSendingToServer handleRecivedData={this.handleRecivedData} />
+          <div ref={(ref) => (this.sceneContainer = ref)} />
       </div>
     );
   }

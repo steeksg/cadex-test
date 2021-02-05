@@ -73,8 +73,8 @@ class ThreePanel extends Component {
   }
 
   onWindowResize() {
-    console.log("resize");
-    this.camera.aspect = this.sceneContainer.clientWidth / this.sceneContainer.clientWidth;
+    this.camera.aspect =
+      this.sceneContainer.clientWidth / this.sceneContainer.clientWidth;
 
     this.camera.updateProjectionMatrix();
 

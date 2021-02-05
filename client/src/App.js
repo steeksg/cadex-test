@@ -4,7 +4,6 @@ import "./App.scss";
 import NavbarApp from "./components/navbar/navbar";
 
 import { Container } from "react-bootstrap";
-
 import { useRouts } from "./routes";
 
 function App() {
@@ -12,10 +11,12 @@ function App() {
 
   return (
     <div className="App">
-      <NavbarApp />
-      <Container className="d-flex justify-content-center">
-        <Router>{routes}</Router>
-      </Container>
+      <Router>
+        <NavbarApp />
+        <Container className="d-flex justify-content-center">
+          {routes}
+        </Container>
+      </Router>
     </div>
   );
 }

@@ -53,7 +53,7 @@ class FormSendingToServer extends Component {
               as={Col}
               className="col-12 col-sm-4 col-lg-3 d-flex flex-row align-items-center"
             >
-              <Col className="col-md-3 col-4 pl-0">
+              <Col className="col-md-3 col-4 pl-0 mr-1">
                 <Form.Label className="mr-3 my-auto">Length:</Form.Label>
               </Col>
               <Col className="col-md-9 col-8 pr-0">
@@ -71,7 +71,7 @@ class FormSendingToServer extends Component {
               as={Col}
               className="col-12 col-sm-4 col-lg-3 d-flex flex-row justify-content-between align-items-center"
             >
-              <Col className="col-md-3 col-4 pl-0">
+              <Col className="col-md-3 col-4 pl-0 mr-1">
                 <Form.Label className="mr-3 my-auto">Width:</Form.Label>
               </Col>
               <Col className="col-md-9 col-8 pr-0">
@@ -88,7 +88,7 @@ class FormSendingToServer extends Component {
               as={Col}
               className="col-12 col-sm-4 col-lg-3 d-flex flex-row justify-content-between align-items-center"
             >
-              <Col className="col-md-3 col-4 pl-0">
+              <Col className="col-md-3 col-4 pl-0 mr-1">
                 <Form.Label className="mr-3 my-auto">Height:</Form.Label>
               </Col>
               <Col className="col-md-9 col-8 pr-0">
